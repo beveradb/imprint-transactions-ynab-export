@@ -1,14 +1,23 @@
 import requests
-import http.client
 from bs4 import BeautifulSoup
+import json
 
-imprint_access_token = "" # Extract from activity API call using browser dev tools
-imprint_device_id = "" # Extract from activity API call using browser dev tools
-imprint_signature = "" # Extract from activity API call using browser dev tools
+# Load API credentials from a separate file with content:
+# {
+#     "imprint_access_token": "",
+#     "imprint_device_id": "",
+#     "imprint_signature": ""
+# }
+# To get these credentials, log into your Imprint online portal in a web browser,
+# open dev tools and find any authenticated API call (e.g. /v1/activity/fetch)
+# these three values should be in the request headers.
 
-# Enable HTTP debug logging
-http.client.HTTPConnection.debuglevel = 1
+with open("api_credentials.json", encoding="utf-8") as f:
+    credentials = json.load(f)
 
+imprint_access_token = credentials["imprint_access_token"]
+imprint_device_id = credentials["imprint_device_id"]
+imprint_signature = credentials["imprint_signature"]
 headers = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:122.0) Gecko/20100101 Firefox/122.0",
     "Accept": "*/*",
