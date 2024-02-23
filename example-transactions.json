@@ -1,0 +1,402 @@
+{
+    "activity": [
+        {
+            "id": "11856647",
+            "TimestampUnix": 0,
+            "type": "TRANSACTION",
+            "dateTime": "2024/02/16, 21:39:05",
+            "header": "MCDONALD'S F1478",
+            "subheader1": "2/16",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "18.11",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 1811,
+                "negative": false
+            },
+            "amountSubtext": "Earned $0.27",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": {
+                "displaySymbol": "$",
+                "displayValue": "0.27",
+                "displayUnit": "dollar",
+                "exponent": 2,
+                "valueInMinUnit": 27,
+                "negative": false
+            },
+            "assets": {
+                "iconType": "SHOP"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "TRXN-v1-eb7bf195-ada3-4859-b16c-6e7d650ce9cd",
+            "paymentAccount": null,
+            "details": {
+                "heading": {
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "18.11",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 1811,
+                        "negative": false
+                    },
+                    "header": "MCDONALD'S F1478",
+                    "subheader1": "Purchase",
+                    "subheader2": "2/16"
+                },
+                "highlight": {
+                    "body": "Rewards Earned",
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "0.27",
+                        "displayUnit": "dollar",
+                        "exponent": 2,
+                        "valueInMinUnit": 27,
+                        "negative": false
+                    },
+                    "contentColor": "CONTENT_POSITIVE"
+                },
+                "other": {
+                    "location": "COLUMBIA, SC",
+                    "category": "Fast Food Restaurants",
+                    "spendType": "Contactless",
+                    "customerName": "John Smith"
+                },
+                "rewardsRedemption": null
+            },
+            "rewardsRedemptionStatus": "notavailable"
+        },
+        {
+            "id": "11830337",
+            "TimestampUnix": 0,
+            "type": "TRANSACTION",
+            "dateTime": "2024/02/16, 10:55:40",
+            "header": "FGTACL WK 2 TIX",
+            "subheader1": "2/16",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "246.25",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 24625,
+                "negative": false
+            },
+            "amountSubtext": "Earned $3.69",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": {
+                "displaySymbol": "$",
+                "displayValue": "3.69",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 369,
+                "negative": false
+            },
+            "assets": {
+                "iconType": "SHOP"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "TRXN-v1-30b4e2a6-55c6-41b8-92af-9ed77e766d72",
+            "paymentAccount": null,
+            "details": {
+                "heading": {
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "246.25",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 24625,
+                        "negative": false
+                    },
+                    "header": "FGTACL WK 2 TIX",
+                    "subheader1": "Purchase",
+                    "subheader2": "2/16"
+                },
+                "highlight": {
+                    "body": "Rewards Earned",
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "3.69",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 369,
+                        "negative": false
+                    },
+                    "contentColor": "CONTENT_POSITIVE"
+                },
+                "other": {
+                    "location": "512-389-0315, TX",
+                    "category": "Theatrical Ticket Agencies",
+                    "spendType": "Online",
+                    "customerName": "John Smith"
+                },
+                "rewardsRedemption": null
+            },
+            "rewardsRedemptionStatus": "notavailable"
+        },
+        {
+            "id": "11393774",
+            "TimestampUnix": 0,
+            "type": "PAYMENT",
+            "dateTime": "2024/02/09, 14:45:12",
+            "header": "Payment",
+            "subheader1": "2/9",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "895.02",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": -89502,
+                "negative": true
+            },
+            "amountSubtext": "",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": null,
+            "assets": {
+                "iconType": "RECEIPT"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 1707507912,
+            "editTimeToEpochSec": 1707454740,
+            "transactionUUID": "TRXN-v1-63cd11d4-9efa-4f67-9b96-66abb0e69e66",
+            "paymentAccount": {
+                "paymentAccountUUID": "PYAC-v1-8beb75d4-c51b-418f-af98-ecd96d9f488a",
+                "status": "approved",
+                "name": "Wells Fargo",
+                "accountNumberLast4": "1234",
+                "reason": "",
+                "accountType": "checking"
+            },
+            "rewardsRedemptionStatus": ""
+        },
+        {
+            "id": "10845373",
+            "TimestampUnix": 0,
+            "type": "REWARD",
+            "dateTime": "2024/01/31, 09:17:34",
+            "header": "Pay off card balance",
+            "subheader1": "1/31",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "64.87",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": -6487,
+                "negative": true
+            },
+            "amountSubtext": "Auto-applied",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": null,
+            "assets": {
+                "iconType": "CHECK"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "TRXN-v1-4528a89f-28c8-47ab-9403-e3c860838d67",
+            "paymentAccount": null,
+            "rewardsRedemptionStatus": "notavailable"
+        },
+        {
+            "id": "10820649",
+            "TimestampUnix": 0,
+            "type": "TRANSACTION",
+            "dateTime": "2024/01/30, 13:40:31",
+            "header": "CIRCA BARBERSHOP - SUM",
+            "subheader1": "1/30",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "44.00",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 4400,
+                "negative": false
+            },
+            "amountSubtext": "Earned $0.66",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": {
+                "displaySymbol": "$",
+                "displayValue": "0.66",
+                "displayUnit": "dollar",
+                "exponent": 2,
+                "valueInMinUnit": 66,
+                "negative": false
+            },
+            "assets": {
+                "iconType": "SHOP"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "TRXN-v1-c30750a9-263b-481f-a69d-d111e76d8cf5",
+            "paymentAccount": null,
+            "details": {
+                "heading": {
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "44.00",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 4400,
+                        "negative": false
+                    },
+                    "header": "CIRCA BARBERSHOP - SUM",
+                    "subheader1": "Purchase",
+                    "subheader2": "1/30"
+                },
+                "highlight": {
+                    "body": "Rewards Earned",
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "0.66",
+                        "displayUnit": "dollar",
+                        "exponent": 2,
+                        "valueInMinUnit": 66,
+                        "negative": false
+                    },
+                    "contentColor": "CONTENT_POSITIVE"
+                },
+                "other": {
+                    "location": "192-92652995, NY",
+                    "category": "Barber and Beauty Shops",
+                    "spendType": "Contactless",
+                    "customerName": "John Smith"
+                },
+                "rewardsRedemption": null
+            },
+            "rewardsRedemptionStatus": "notavailable"
+        },
+        {
+            "id": "PACT-v1-61c8703c-ff92-4172-a7ad-be687fb2ebb3~2024-01-23T09:57:00.698Z~NON_TRXN#2024-01-23T09:57:00.698Z",
+            "TimestampUnix": 0,
+            "type": "OFFER",
+            "dateTime": "2024/01/23, 04:57:00",
+            "header": "$50 Sign-Up Bonus",
+            "subheader1": "1/23",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "50.00",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 5000,
+                "negative": false
+            },
+            "amountSubtext": "",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": null,
+            "assets": {
+                "iconType": "CHECK"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "ACCR-v1-50b8e592-fe65-4529-8165-51ea0d947eda",
+            "paymentAccount": null,
+            "details": {
+                "heading": {
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "50.00",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 5000,
+                        "negative": false
+                    },
+                    "header": "$50 Sign-Up Bonus",
+                    "subheader1": "1/23",
+                    "subheader2": ""
+                },
+                "rewardsRedemption": null,
+                "description": {
+                    "content": "Extra $50 cash back when you spend $500 on your card within 60 days of becoming a cardholder"
+                }
+            },
+            "rewardsRedemptionStatus": ""
+        },
+        {
+            "id": "9380237",
+            "TimestampUnix": 0,
+            "type": "TRANSACTION",
+            "dateTime": "2024/01/04, 14:21:30",
+            "header": "HEB ONLINE #108",
+            "subheader1": "1/4",
+            "subheader2": "",
+            "amount": {
+                "displaySymbol": "$",
+                "displayValue": "91.08",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 9108,
+                "negative": false
+            },
+            "amountSubtext": "Earned $3.06",
+            "amountSubtextPrefix": "",
+            "amountSubtextHighlight": {
+                "displaySymbol": "$",
+                "displayValue": "3.06",
+                "displayUnit": "dollars",
+                "exponent": 2,
+                "valueInMinUnit": 306,
+                "negative": false
+            },
+            "assets": {
+                "iconType": "SHOP"
+            },
+            "status": "CONFIRMED",
+            "scheduledDateEpochSec": 0,
+            "editTimeToEpochSec": 0,
+            "transactionUUID": "TRXN-v1-26ec63cb-c877-453b-8a72-554b9f2822a7",
+            "paymentAccount": null,
+            "details": {
+                "heading": {
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "91.08",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 9108,
+                        "negative": false
+                    },
+                    "header": "HEB ONLINE #108",
+                    "subheader1": "Purchase",
+                    "subheader2": "1/4"
+                },
+                "highlight": {
+                    "body": "Rewards Earned",
+                    "amount": {
+                        "displaySymbol": "$",
+                        "displayValue": "3.06",
+                        "displayUnit": "dollars",
+                        "exponent": 2,
+                        "valueInMinUnit": 306,
+                        "negative": false
+                    },
+                    "contentColor": "CONTENT_POSITIVE"
+                },
+                "other": {
+                    "location": "855-803-0611, TX",
+                    "category": "Grocery Stores, Supermarkets",
+                    "spendType": "Online",
+                    "customerName": "John Smith"
+                },
+                "rewardsRedemption": null
+            },
+            "rewardsRedemptionStatus": "notavailable"
+        }
+    ],
+    "summary": {
+        "limit": 20,
+        "lastID": "",
+        "lastPage": true
+    }
+}

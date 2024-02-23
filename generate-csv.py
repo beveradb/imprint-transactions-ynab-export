@@ -1,18 +1,14 @@
 import requests
-from bs4 import BeautifulSoup
 import json
+import csv
+import logging
 
-# Load API credentials from a separate file with content:
-# {
-#     "imprint_access_token": "",
-#     "imprint_device_id": "",
-#     "imprint_signature": ""
-# }
-# To get these credentials, log into your Imprint online portal in a web browser,
-# open dev tools and find any authenticated API call (e.g. /v1/activity/fetch)
-# these three values should be in the request headers.
+# Setup basic configuration for logging
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
 
-with open("api_credentials.json", encoding="utf-8") as f:
+# Load API credentials, which should contain three values from a logged-in session (from browser dev tools, or using interactive-login.py):
+# imprint_access_token, imprint_device_id, imprint_signature
+with open("credentials.json", encoding="utf-8") as f:
     credentials = json.load(f)
 
 imprint_access_token = credentials["imprint_access_token"]
@@ -43,49 +39,35 @@ post_data = '{"filters":{"productAccountUUIDs":["PACT-v1-61c8703c-ff92-4172-a7ad
 response = requests.post("https://api.imprint.co/v1/activity/fetch", headers=headers, data=post_data, timeout=10)
 data = response.json()
 
-# The rest of the script for building the OFX file remains the same
-# Start building the OFX file
-soup = BeautifulSoup(features="xml")
-ofx = soup.new_tag("OFX")
-soup.append(ofx)
+# Dump transactions JSON for debugging
+# with open("transactions.json", mode="w", encoding="utf-8") as f:
+#     json.dump(data, f, ensure_ascii=False, indent=4)
 
-bankmsgsrsv1 = soup.new_tag("BANKMSGSRSV1")
-ofx.append(bankmsgsrsv1)
+# Prepare CSV file
+with open("transactions.csv", mode="w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Date", "Payee", "Memo", "Outflow", "Inflow"])
 
-stmttrnrs = soup.new_tag("STMTTRNRS")
-bankmsgsrsv1.append(stmttrnrs)
+    # Loop through transactions and write them to the CSV, see example-transactions.json for structure
+    for transaction in data["activity"]:
+        date = transaction["dateTime"].split(",")[0]
+        payee = transaction["header"]
 
-banktranlist = soup.new_tag("BANKTRANLIST")
-stmttrnrs.append(banktranlist)
+        memo = ""
+        if "details" in transaction and "other" in transaction["details"]:
+            memo += f"{transaction['details']['other']['category']} "
+        memo += f"({transaction["transactionUUID"]})"
 
-# Loop through transactions and add them to the OFX file
-for transaction in data["activity"]:
-    if transaction["type"] == "TRANSACTION":
-        stmttrn = soup.new_tag("STMTTRN")
-        banktranlist.append(stmttrn)
+        amount = transaction['amount']['displayValue']
 
-        trntype = soup.new_tag("TRNTYPE")
-        trntype.string = "DEBIT" if transaction["amount"]["negative"] else "CREDIT"
-        stmttrn.append(trntype)
+        is_negative = transaction["type"] == "OFFER" or transaction["amount"].get("negative", False)
 
-        dtposted = soup.new_tag("DTPOSTED")
-        dtposted.string = transaction["dateTime"].replace("/", "").replace(",", "").replace(" ", "").replace(":", "")
-        stmttrn.append(dtposted)
+        outflow = amount if not is_negative else "0"
+        inflow = amount if is_negative else "0"
 
-        trnamt = soup.new_tag("TRNAMT")
-        trnamt.string = str(transaction["amount"]["displayValue"])
-        stmttrn.append(trnamt)
+        logging.info(
+            f"Date: {date} Out: {outflow:<7} In: {inflow:<7} Type: {transaction["type"]} Payee: {payee} Memo: {memo}"
+        )
+        writer.writerow([date, payee, memo, outflow, inflow])
 
-        fitid = soup.new_tag("FITID")
-        fitid.string = transaction["id"]
-        stmttrn.append(fitid)
-
-        name = soup.new_tag("NAME")
-        name.string = transaction["header"]
-        stmttrn.append(name)
-
-# Save the OFX file
-with open("transactions.ofx", "w") as file:
-    file.write(str(soup.prettify()))
-
-print("OFX file generated successfully.")
+print("CSV file generated successfully.")
